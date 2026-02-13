@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="For Baby Pwa Ceet ❤️ - Hsu Yi Shoon Lae">
     <meta property="og:description" content="A special Valentine's Day surprise for Hsu Yi Shoon Lae. Will you be my Valentine?">
-    <meta property="og:image" content="https://media1.tenor.com/m/m6Rz-F40848AAAAC/mochi-cat.gif">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/paing's.gif">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="For Baby Pwa Ceet ❤️ - Hsu Yi Shoon Lae">
     <meta property="twitter:description" content="A special Valentine's Day surprise for Hsu Yi Shoon Lae. Will you be my Valentine?">
@@ -23,12 +23,12 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <link rel="icon" type="image/png" sizes="16x16"
-            href="/img/love.png">
+            href="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/love.png">
         <link rel="icon" type="image/png" sizes="32x32"
-            href="/img/love.png">
+            href="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/love.png">
         <link rel="icon" type="image/png" sizes="48x48"
-            href="/img/love.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/love.png">
+            href="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/love.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/love.png">
         <link rel="canonical" href="https://flashchinchilla.github.io/forHsu/">
 
     <style>
@@ -217,15 +217,17 @@
         }
         .timeline-date { font-size: 0.85rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
+        /* FIXED GAME GRID STYLES */
         .game-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
             margin-top: 20px;
+            perspective: 1000px;
         }
         .game-card {
             aspect-ratio: 1;
-            background: white;
+            /* background: white; Removed to fix visibility during flip */
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -236,38 +238,46 @@
             transition: transform 0.6s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             position: relative;
-            overflow: hidden;
+            /* overflow: hidden; REMOVED to fix 3D rendering issue */
         }
-        .game-card.flipped { transform: rotateY(180deg); background: var(--primary-light); }
+        .game-card.flipped { transform: rotateY(180deg); }
         
-        .card-back {
+        .card-back, .card-front {
             position: absolute;
             width: 100%;
             height: 100%;
+            -webkit-backface-visibility: hidden; /* Essential for Safari */
             backface-visibility: hidden;
+            border-radius: 12px;
+            top: 0; 
+            left: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: var(--primary-light);
+        }
+
+        .card-back {
             background: white;
+            color: var(--primary-light);
+            font-size: 2rem;
+            transform: rotateY(0deg);
             z-index: 2;
         }
+        
         .card-front {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
+            background: white;
             transform: rotateY(180deg);
-            z-index: 1;
+            /* z-index: 1; */
         }
+        
         .card-front img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 12px;
+            display: block;
         }
-        .game-card.flipped .card-back { display: none; }
+        /* END FIXED GAME GRID STYLES */
 
 
         .masonry { 
@@ -523,7 +533,7 @@
     <section id="screen-intro">
         <div class="intro-content">
             <div class="gif-area">
-                <img src="/img/paing's.gif" alt="Cute Gif">
+                <img src="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/paing's.gif" alt="Cute Gif">
             </div>
             
             <h1 style="margin-bottom: 10px;">
@@ -535,7 +545,7 @@
                 <span class="lang-my">ကိုယ့်ရဲ့ Valentine ဖြစ်ခွင့်ပေးမလားဟင်?</span>
             </p>
             
-            <img src="/img/paing's.gif" class="pointing-cat" alt="Pointing Cat" style="opacity: 0; animation: fadeIn 2s forwards; animation-delay: 1s;">
+            <img src="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/paing's.gif" class="pointing-cat" alt="Pointing Cat" style="opacity: 0; animation: fadeIn 2s forwards; animation-delay: 1s;">
 
             <div class="buttons-container">
                 <button id="yesBtn" class="btn" onclick="acceptLove()">
@@ -606,12 +616,12 @@
                 <span class="lang-my">အမှတ်တရပုံရိပ်များ</span>
             </h2>
             <div class="masonry">
-                <img src="/img/section1" alt="Photo">
-                <img src="/img/section2" alt="Photo">
-                <img src="/img/section3" alt="Photo">
-                <img src="/img/section4" alt="Photo">
-                <img src="/img/section5" alt="Photo">
-                <img src="/img/section6" alt="Photo">
+                <img src="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/section1.jpg" alt="Photo">
+                <img src="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/section2.jpg" alt="Photo">
+                <img src="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/section3.jpg" alt="Photo">
+                <img src="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/section4.jpg" alt="Photo">
+                <img src="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/section5.jpg" alt="Photo">
+                <img src="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/section6.jpg" alt="Photo">
             </div>
         </div>
 
@@ -707,7 +717,7 @@
         <div class="quiz-content">
             <!-- Punishment Overlay -->
             <div id="punishmentOverlay" class="punishment-overlay">
-                <img src="https://media.tenor.com/2nZk3N6qFpQAAAAj/mochi-peach-cat-goma.gif" alt="Punishment">
+                <img src="https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/paing's.gif" alt="Punishment">
                 <h3 style="color:var(--primary); margin-bottom:10px;">
                     <span class="lang-en">Wrong Answer! 🥺</span>
                     <span class="lang-my">အဖြေမှားနေတယ်! 🥺</span>
@@ -972,14 +982,14 @@
 
         // ================= GAME LOGIC =================
         const imagePairs = [
-            '/img/match1',
-            '/img/match2',
-            '/img/match3',
-            '/img/match4',
-            '/img/match1',
-            '/img/match2',
-            '/img/match3',
-            '/img/match4'
+            'https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/match1.jpg',
+            'https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/match2.jpg',
+            'https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/match3.jpg',
+            'https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/match4.jpg',
+            'https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/match1.jpg',
+            'https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/match2.jpg',
+            'https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/match3.jpg',
+            'https://cdn.jsdelivr.net/gh/flashchinchilla/forHsu@main/img/match4.jpg'
         ];
         
         imagePairs.sort(() => 0.5 - Math.random());
